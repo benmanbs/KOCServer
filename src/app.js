@@ -36,7 +36,7 @@ app.get('/days', function(req, res) {
 	time: row.time,
 	hasMap: row.hasMap,
 	mapURL: row.mapURL,
-	eventID: row.eventId
+	eventID: row.eventID
       });
     });
     
