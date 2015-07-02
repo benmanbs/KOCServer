@@ -1,5 +1,6 @@
 module.exports = {
-    host     : 'localhost',
-    user     : 'root',
-    password : ''
-  };
+  host     : 'localhost',
+  user     : 'root',
+  password : '',
+  database : 'koc'
+};
