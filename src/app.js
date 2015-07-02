@@ -18,7 +18,10 @@ app.get('/', function (req, res) {
  */
 app.get('/days', function(req, res) {
   connection.query('SELECT * FROM sDay LEFT OUTER JOIN sEvent ON sDay.dayID = sEvent.dayNum WHERE sEvent.title IS NOT NULL ORDER BY sDay.dayID', function(err, rows, fields) {
-    if (err) throw err;
+    if (err) {
+      console.log(err);
+      return;
+    }
 
     // initialize holder object
     var data = {};
