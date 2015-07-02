@@ -22,12 +22,12 @@ app.get('/days', function(req, res) {
     var data = {};
 
     _.each(rows, function(row) {
-      var item = data[row.dayID] || {
+      var item = data[row.dayID] || (data[row.dayID] = {
         dayID: row.dayID,
         displayName: row.displayName,
         available: row.available,
         events: []
-      };
+      });
 
       item.events.push({
         title: row.title,

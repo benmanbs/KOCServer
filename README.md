@@ -4,7 +4,7 @@ This server powers the KOC iOS app.
 
 The following API endpoints should work:
 
-/days                    TODO
+/days                    
 /day/create              TODO
 /days/#/events/create    TODO
 
