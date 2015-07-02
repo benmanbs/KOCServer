@@ -1,0 +1,19 @@
+{
+  "name": "KOCServer",
+  "version": "0.0.0",
+  "description": "KOC Server",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/benmanbs/KOCServer.git"
+  },
+  "author": "Benjamin Shai <benmanbs@gmail.com> (http://github.com/benmanbs)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/benmanbs/KOCServer/issues"
+  },
+  "homepage": "https://github.com/benmanbs/KOCServer"
+}
