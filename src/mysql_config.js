@@ -1,5 +1,5 @@
-return {
-  host     : 'localhost',
-  user     : 'root',
-  password : ''
-};
+module.exports = {
+    host     : 'localhost',
+    user     : 'root',
+    password : ''
+  };
