@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/benmanbs/KOCServer/issues"
   },
-  "homepage": "https://github.com/benmanbs/KOCServer"
+  "homepage": "https://github.com/benmanbs/KOCServer",
+  "dependencies": {
+    "express": "^4.13.0",
+    "mysql": "^2.7.0"
+  }
 }
