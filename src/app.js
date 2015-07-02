@@ -5,6 +5,10 @@ var connection_config = require('./mysql_config.js');
 var mysql      = require('mysql');
 var connection =  mysql.createConnection(connection_config);
 
+// Connect the sql connection;
+connection.connect();
+
+connection.on(
 app.get('/', function (req, res) {
   res.send('Hello World!');
 });
@@ -13,8 +17,6 @@ app.get('/', function (req, res) {
  * This method return the entire list of days, with their attached events.
  */
 app.get('/days', function(req, res) {
-  connection.connect();
-
   connection.query('SELECT * FROM sDay LEFT OUTER JOIN sEvent ON sDay.dayID = sEvent.dayNum WHERE sEvent.title IS NOT NULL ORDER BY sDay.dayID', function(err, rows, fields) {
     if (err) throw err;
 
@@ -41,7 +43,6 @@ app.get('/days', function(req, res) {
     res.send(_.values(data));
   });
 
-  connection.end();
 });
 
 var server = app.listen(3000, function () {
