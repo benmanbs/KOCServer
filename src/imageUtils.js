@@ -7,7 +7,9 @@ var fs = require('fs');
  * it to the current date stamp (so we can order them later), and
  * checks if it's a valid image.
  *
- * @author bshai date 7/5/15.
+ * @param file
+ * @param success
+ * @param err
  */
 var upload = function(file, success, err) {
     // Get the temporary location of the file
@@ -33,4 +35,50 @@ var upload = function(file, success, err) {
     }
 };
 
-module.exports = upload;
+/**
+ * Delete an image from our local file system. This is usually due to a rejection.
+ *
+ * @param fileName
+ * @param success
+ * @param error
+ */
+var deleteImage = function(fileName, success, error) {
+    fs.unlink("./images/" + fileName, function(err) {
+        if (err)
+            error();
+        else
+            success();
+    });
+};
+
+/**
+ * Uploads a file to flickr. This is usually due to an approval.
+ *
+ * @param fileName
+ * @param success
+ * @param error
+ */
+var uploadToFlickr = function(fileName, success, error) {
+    // TODO
+};
+
+var exists = function(fileName) {
+    try {
+        // Query the entry
+        stats = fs.lstatSync(fileName);
+
+        // Is it a file?
+        if (stats.isFile()) {
+            return true;
+        }
+    } catch (e) {
+        return false;
+    }
+};
+
+module.exports = {
+    upload: upload,
+    'delete': deleteImage,
+    uploadToFlickr: uploadToFlickr,
+    exists: exists
+};
