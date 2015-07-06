@@ -21,6 +21,8 @@ var getConfigSettings = function(local) {
 };
 
 // This is going to be a ghetto-ass singleton.
+// This is because multiple files may require in this connector,
+// but we only want it to create one instance of connection.
 var connection;
 
 /**

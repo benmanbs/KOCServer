@@ -11,7 +11,7 @@ var fs = require('fs');
  * @param success
  * @param err
  */
-var upload = function(file, success, err) {
+var upload = function(file, success, error) {
     // Get the temporary location of the file
     var tmp_path = file.path;
     var buffer = readChunk.sync(tmp_path, 0, 12);
@@ -22,16 +22,20 @@ var upload = function(file, success, err) {
         target_path = "./images/" + new Date().getTime() + '.' + file.extension;
 
         // Move the file from the temporary location to the intended location
-        fs.renameSync(tmp_path, target_path);
+        fs.rename(tmp_path, target_path, function(err) {
+            if (err)
+                error();
+            else
+                success();
+        });
 
-        success();
     } else {
         // Delete the temporary file, so that the explicitly set temporary upload dir does not get filled with unwanted files.
         fs.unlink(tmp_path, function(err) {
             if (err)
                 throw err;
         });
-        err();
+        error();
     }
 };
 
@@ -62,23 +66,30 @@ var uploadToFlickr = function(fileName, success, error) {
     // TODO
 };
 
-var exists = function(fileName) {
-    try {
-        // Query the entry
-        stats = fs.lstatSync(fileName);
+var exists = function(fileName, success, error) {
+    // Query the entry
+    fs.lstat(fileName, function(err, stats) {
+        if (!err && stats.isFile())
+            success();
+        else
+            error();
+    });
+};
 
-        // Is it a file?
-        if (stats.isFile()) {
-            return true;
+var listAllImages = function(success, error) {
+    fs.readdir('./images', function(err, files) {
+        if (err) {
+            error();
+            throw err;
         }
-    } catch (e) {
-        return false;
-    }
+        success(files);
+    });
 };
 
 module.exports = {
     upload: upload,
     'delete': deleteImage,
     uploadToFlickr: uploadToFlickr,
-    exists: exists
+    exists: exists,
+    listAllImages: listAllImages
 };

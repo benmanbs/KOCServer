@@ -1,10 +1,14 @@
+/**
+ * This file initializes all the api endpoints needed for the app.
+ *
+ * @author bshai date 7/6/15
+ */
 var connection = require('./mysql.js');
 var multer = require('multer');
 var imageUtils = require('./imageUtils');
 
 var start = function(app) {
 
-  // All the api endpoints
   /**
    * This method return the entire list of days, with their attached events.
    */
@@ -44,23 +48,24 @@ var start = function(app) {
    * Expects the file name of the image.
    */
   app.post('/api/images/:image/approve', function(req, res) {
-    if (!imageUtils.exists(req.params.image)) {
+
+    imageUtils.exists(req.params.image, function(){
+      var error = function() {
+        res.status(400).send('Something went wrong with flickr upload. Please contact your server administrator.');
+      };
+
+      imageUtils.uploadToFlickr(req.params.image, function() {
+        imageUtils.delete(req.params.image, function() {
+          res.status(200).end();
+        }, error)
+      }, error);
+
+    }, function(){
       res.status(400).send('Not a valid image file that the system recognizes. Please check out the images page.').end();
-      return;
-    }
+    });
 
-    var error = function() {
-      res.status(400).send('Something went wrong with flickr upload. Please contact your server administrator.');
-    };
-
-    imageUtils.uploadToFlickr(req.params.image, function() {
-      imageUtils.delete(req.params.image, function() {
-        res.status(200).end();
-      }, error)
-    }, error);
   });
 
-  return app;
 };
 
 module.exports = {
