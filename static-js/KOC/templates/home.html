@@ -1,0 +1,4 @@
+Here's a list of images:<br>
+<% collection.each(function(item) { %>
+    <a href="#/images/<%= item.get('fullPath') %>"><%= item.get('name') %></a><br>
+<% }); %>

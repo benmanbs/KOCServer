@@ -68,7 +68,7 @@ var uploadToFlickr = function(fileName, success, error) {
 
 var exists = function(fileName, success, error) {
     // Query the entry
-    fs.lstat(fileName, function(err, stats) {
+    fs.lstat("./images/" + fileName, function(err, stats) {
         if (!err && stats.isFile())
             success();
         else

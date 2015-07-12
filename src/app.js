@@ -14,7 +14,7 @@ api.start(app);
 site.start(app);
 
 // Start listening on port 8080
-var server = app.listen(3000, function () {
+var server = app.listen(8080, function () {
 
     var host = server.address().address;
     var port = server.address().port;

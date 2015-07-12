@@ -15,11 +15,14 @@ var start = function(app) {
     app.use('/static/images', express.static('./images'));
 
     /**
-     * Serve index.html
+     * Make the js accessible to be shown
      */
-    app.get('/', function (req, res) {
-        res.sendFile(path.join(__dirname + '/../index.html'));
-    });
+    app.use('/static/js', express.static('./static-js'));
+
+    /**
+     * Make the css accessible to be shown
+     */
+    app.use('/static/css', express.static('./css'));
 
     /**
      * Get a list of all the available images
@@ -30,7 +33,14 @@ var start = function(app) {
         }, function(){
             res.status(500).send('Something went terribly wrong. Please contact server admin').end();
         })
-    })
+    });
+
+    /**
+     * Serve index.html
+     */
+    app.get('/', function (req, res) {
+        res.sendFile(path.join(__dirname + '/../index.html'));
+    });
 };
 
 module.exports = {
