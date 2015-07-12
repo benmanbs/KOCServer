@@ -4,10 +4,19 @@ This server powers the KOC iOS app.
 
 The following API endpoints should work:
 
-/days                    
-/day/create              TODO
-/days/#/events/create    TODO
+GET /api/days - get all the days
 
-/images/upload           TODO
-/images/approve          TODO
-/images/reject           TODO
+POST /api/day/create              TODO
+
+POST /api/days/#/events/create    TODO
+
+
+GET / - returns the static site
+
+GET /api/images - gets the list of all available images
+
+POST /api/images - uploads an image
+
+POST /api/images/[image]/approve - approves an image. TODO add flickr integration
+
+POST /api/images/[image]/reject - rejects an image
