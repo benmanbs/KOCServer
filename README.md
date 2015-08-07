@@ -17,6 +17,6 @@ GET /api/images - gets the list of all available images
 
 POST /api/images - uploads an image
 
-POST /api/images/[image]/approve - approves an image. TODO add flickr integration
+POST /api/images/[image]/approve - approves an image.
 
 POST /api/images/[image]/reject - rejects an image
