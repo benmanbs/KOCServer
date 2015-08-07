@@ -1,4 +1,9 @@
-Here's a list of images:<br>
-<% collection.each(function(item) { %>
-    <a href="#/images/<%= item.get('fullPath') %>"><%= item.get('name') %></a><br>
-<% }); %>
+<% if (hasData) { %>
+    Here's a list of images:<br>
+    <% collection.each(function(item) { %>
+        <a href="#/images/<%= item.get('fullPath') %>"><%= item.get('name') %></a><br>
+    <% }); %>
+<% } else { %>
+    There are no images uploaded!<br><br>
+    You've got nothing to do here, jack. Go sip some tea or something.
+<% } %>

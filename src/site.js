@@ -15,6 +15,11 @@ var start = function(app) {
     app.use('/static/images', express.static('./images'));
 
     /**
+     * Make the site images accessible to be shown
+     */
+    app.use('/static/images', express.static('./static-images'));
+
+    /**
      * Make the js accessible to be shown
      */
     app.use('/static/js', express.static('./static-js'));

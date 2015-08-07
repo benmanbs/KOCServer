@@ -26,7 +26,8 @@ define([
 
         render: function() {
             this.$el.html(this.template({
-                collection: this.collection
+                collection: this.collection,
+                hasData: !!this.collection.length
             }));
             return this;
         }
