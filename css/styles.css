@@ -13,3 +13,11 @@
     display: inline-block;
     cursor: pointer;
 }
+
+#loading {
+    background: url('/static/images/loading.gif') -63px -22px no-repeat;
+    background-size: 293px 208px;
+    width: 150px;
+    height: 150px;
+    display: inline-block;
+}

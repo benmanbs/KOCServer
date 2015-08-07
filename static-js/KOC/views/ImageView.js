@@ -51,14 +51,23 @@ define([
         },
 
         _approveHandler: function() {
+            if (this.calling) {
+                return;
+            }
+            this.calling = true;
             this._fireCall('approve');
         },
 
         _rejectHandler: function() {
+            if (this.calling) {
+                return;
+            }
+            this.calling = true;
             this._fireCall('reject');
         },
 
         _fireCall: function(route) {
+            this.swapInSpinner();
             var self = this;
             $.ajax('/api/images/' + this.image.get('fullPath') + '/' + route, { method: 'POST'})
                 .done(function(data, textStatus, jqXHR) {
@@ -69,11 +78,16 @@ define([
                         } else {
                             self.trigger('noItems');
                         }
+                        self.calling = false;
                     })
                 })
                 .fail(function(jqXHR, textStatus, errorThrown) {
                     alert('Something went horribly wrong. Here is the error: ' + textStatus + ' ' + errorThrown);
                 });
+        },
+
+        swapInSpinner: function() {
+            this.$('#approve, #reject').attr('id', 'loading')
         }
     });
 
