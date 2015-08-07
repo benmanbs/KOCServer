@@ -1,0 +1,15 @@
+#approve {
+    background: url('/static/images/check.png') 0px 0px no-repeat;
+    width: 150px;
+    height: 150px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+#reject {
+    background: url('/static/images/ex.png') 0px 0px no-repeat;
+    width: 150px;
+    height: 150px;
+    display: inline-block;
+    cursor: pointer;
+}

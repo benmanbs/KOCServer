@@ -64,7 +64,11 @@ define([
                 .done(function(data, textStatus, jqXHR) {
                     self.collection.fetch({reset:true});
                     self.listenToOnce(self.collection, 'reset', function() {
-                        self.trigger('success', self.collection.at(self.index));
+                        if (self.collection.length > 0) {
+                            self.trigger('success', self.collection.at(self.index));
+                        } else {
+                            self.trigger('noItems');
+                        }
                     })
                 })
                 .fail(function(jqXHR, textStatus, errorThrown) {

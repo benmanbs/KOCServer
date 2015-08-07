@@ -33,7 +33,10 @@ define([
             var self = this;
             this.listenToOnce(imageView, 'success', function(image) {
                 self.navigate('images/' + image.get('fullPath'), {trigger: true})
-            })
+            });
+            this.listenToOnce(imageView, 'noItems', function() {
+                self.navigate('', {trigger: true})
+            });
         }
 
     });
