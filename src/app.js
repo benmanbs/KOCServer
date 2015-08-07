@@ -9,9 +9,11 @@ var app = express();
 var api = require('./api.js');
 var site = require('./site.js');
 
+var PREFIX = '';
+
 // Start up both controllers
-api.start(app);
-site.start(app);
+api.start(app, PREFIX);
+site.start(app, PREFIX);
 
 // Start listening on port 8080
 var server = app.listen(8080, function () {
