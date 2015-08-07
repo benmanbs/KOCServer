@@ -18,6 +18,7 @@
   "homepage": "https://github.com/benmanbs/KOCServer",
   "dependencies": {
     "express": "^4.13.0",
+    "flickrapi": "^0.3.35",
     "image-type": "^2.0.2",
     "multer": "^0.1.8",
     "mysql": "^2.7.0",

@@ -7,7 +7,7 @@ var connection = require('./mysql.js');
 var multer = require('multer');
 var imageUtils = require('./imageUtils');
 
-var start = function(app) {
+var start = function(app, prefix) {
 
   /**
    * This method return the entire list of days, with their attached events.
@@ -21,12 +21,12 @@ var start = function(app) {
   /**
    * This method uploads an image to a temp dir on the server.
    */
-  app.post('/api/images', [multer({ dest: './images/'})], function(req, res) {
+  app.post('/api/images', [multer({ dest: '.' + prefix + '/images/'})], function(req, res) {
     imageUtils.upload(req.files.file, function() {
       res.status(200).end();
     }, function() {
       res.status(400).send('Not an image file').end()
-    });
+    }, prefix);
   });
 
   /**
@@ -39,7 +39,7 @@ var start = function(app) {
       res.status(200).end();
     }, function() {
       res.status(400).send('Not a valid image file that the system recognizes. Please check out the images page.').end()
-    })
+    }, prefix)
   });
 
   /**
@@ -57,12 +57,12 @@ var start = function(app) {
       imageUtils.uploadToFlickr(req.params.image, function() {
         imageUtils.delete(req.params.image, function() {
           res.status(200).end();
-        }, error)
-      }, error);
+        }, error, prefix)
+      }, error, prefix);
 
     }, function(){
       res.status(400).send('Not a valid image file that the system recognizes. Please check out the images page.').end();
-    });
+    }, prefix);
 
   });
 
