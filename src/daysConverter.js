@@ -28,6 +28,9 @@ var convert = function(rows) {
                 dayID: row.dayID,
                 displayName: row.displayName,
                 available: row.available,
+                textRed: row.text_red,
+                textGreen: row.text_green,
+                textBlue: row.text_blue,
                 events: []
             });
 
@@ -36,7 +39,8 @@ var convert = function(rows) {
             time: row.time,
             hasMap: row.hasMap,
             mapURL: row.mapURL,
-            eventID: row.eventID
+            eventID: row.eventID,
+            details: row.details
         });
     });
 
