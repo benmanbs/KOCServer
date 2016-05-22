@@ -3,7 +3,7 @@
  *
  * @author bshai date 7/6/15
  */
-var connection = require('./mysql.js');
+var connection = require('./mysql');
 var multer = require('multer');
 var imageUtils = require('./imageUtils');
 
@@ -21,7 +21,7 @@ var start = function(app, prefix) {
   /**
    * This method uploads an image to a temp dir on the server.
    */
-  app.post('/api/images', [multer({ dest: '.' + prefix + '/images/'})], function(req, res) {
+  app.post('/api/images', [multer({ dest: '.' + prefix + '/pre-processed-images/'})], function(req, res) {
     imageUtils.upload(req.files.file, function() {
       res.status(200).end();
     }, function() {

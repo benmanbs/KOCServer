@@ -3,7 +3,7 @@ var imageType = require('image-type');
 var fs = require('fs');
 var Flickr = require("flickrapi");
 var _ = require('underscore');
-var flickrOptions = {};
+var flickrOptions = require('./Constants').flickrOptions;
 
 /**
  * This handles the image upload. It saves the image, renames
@@ -132,8 +132,9 @@ var exists = function(fileName, success, error, prefix) {
     });
 };
 
-var listAllImages = function(success, error, prefix) {
-    fs.readdir('.' + prefix + '/images', function(err, files) {
+var listAllImages = function(processed, success, error, prefix) {
+    var dir = processed ? '/images' : '/pre-processed-images';
+    fs.readdir('.' + prefix + dir, function(err, files) {
         if (err) {
             error();
             throw err;

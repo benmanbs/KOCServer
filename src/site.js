@@ -20,6 +20,11 @@ var start = function(app, prefix) {
     app.use('/static/images', express.static('.' + prefix + '/static-images'));
 
     /**
+     * Make the site images accessible to be shown
+     */
+    app.use('/static/images', express.static('.' + prefix + '/pre-processed-images'));
+
+    /**
      * Make the js accessible to be shown
      */
     app.use('/static/js', express.static('.' + prefix + '/static-js'));
@@ -33,7 +38,18 @@ var start = function(app, prefix) {
      * Get a list of all the available images
      */
     app.get('/api/images', function(req, res) {
-        imageUtils.listAllImages(function(files){
+        imageUtils.listAllImages(true, function(files){
+            res.send(files);
+        }, function(){
+            res.status(500).send('Something went terribly wrong. Please contact server admin').end();
+        }, prefix)
+    });
+
+    /**
+     * Get a list of all the available images that are still uploading
+     */
+    app.get('/api/images', function(req, res) {
+        imageUtils.listAllImages(false, function(files){
             res.send(files);
         }, function(){
             res.status(500).send('Something went terribly wrong. Please contact server admin').end();

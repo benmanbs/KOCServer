@@ -17,7 +17,7 @@ var getConfigSettings = function(local) {
     };
   }
 
-  return {};
+  return require('./Constants').mysqlOptions;
 };
 
 // This is going to be a ghetto-ass singleton.
