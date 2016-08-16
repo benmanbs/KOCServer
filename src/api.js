@@ -3,7 +3,7 @@
  *
  * @author bshai date 7/6/15
  */
-var connection = require('./mysql');
+var connection = require('./db');
 var multer = require('multer');
 var imageUtils = require('./imageUtils');
 

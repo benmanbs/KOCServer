@@ -23,6 +23,8 @@
     "multer": "^0.1.8",
     "mysql": "^2.7.0",
     "read-chunk": "^1.0.1",
+    "require-text": "0.0.1",
+    "sqlite3": "^3.1.4",
     "underscore": "^1.8.3"
   }
 }

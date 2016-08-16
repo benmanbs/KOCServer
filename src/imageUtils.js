@@ -22,7 +22,10 @@ var upload = function(file, success, error, prefix) {
     // Check that it's a valid image type
     if(imageType(buffer)) {
         // Set where the file should actually exist
-        target_path = '.' + prefix + '/images/' + new Date().getMonth() + '-' + new Date().getDate() + '-' + new Date().getTime() + '.' + file.extension;
+        var d = new Date();
+        var utc = d.getTime();
+        var nd = new Date(utc + (3600000*-6));
+        var target_path = '.' + prefix + '/images/' + nd.getMonth() + '-' + nd.getDate() + '-' + nd.getTime() + '.' + file.extension;
 
         // Move the file from the temporary location to the intended location
         fs.rename(tmp_path, target_path, function(err) {
@@ -84,9 +87,9 @@ var uploadToFlickr = function(fileName, success, error, prefix) {
             // Here is some crazy logic. First strip the upload day and month from the file name.
             var uploadMonth = +(fileName.split('-')[0]);
             var uploadDay = +(fileName.split('-')[1]);
-            var IMAGE_EPOCH = 11;
+            var IMAGE_EPOCH = 17;
             var albumTitleEnd = uploadDay - IMAGE_EPOCH;
-            if (uploadMonth !== 7 || albumTitleEnd < 1 || albumTitleEnd > 8) {
+            if (uploadMonth !== 7 || albumTitleEnd < 1 || albumTitleEnd > 9) {
                 albumTitleEnd = "Party On!";
             } else {
                 albumTitleEnd = albumTitleEnd.toString();
@@ -94,7 +97,7 @@ var uploadToFlickr = function(fileName, success, error, prefix) {
 
             var albumId = _.find(response.collections.collection[0].set, function(item) {
                 // Find an album that ends in albumTitleEnd
-                return item.title.indexOf(albumTitleEnd, this.length - albumTitleEnd.length) !== -1;
+                return item.title.indexOf('Day ' + albumTitleEnd, this.length - albumTitleEnd.length - 4) !== -1;
             }).id;
 
             // Now that we have the album ID, first upload to flickr
