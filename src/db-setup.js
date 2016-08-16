@@ -11,7 +11,7 @@ var sqlite = require('sqlite3'),
 
 var databasePath = "database.sqlite";
 
-var db = new sqlite.Database(databasePath);
+var db;
 var daysCreate = requireText('../scripts/days.sql', require);
 var eventsCreate = requireText('../scripts/events.sql', require);
 var daysInsert = requireText('../dumps/days.sql', require);
@@ -35,9 +35,11 @@ var query = function(query) {
 var queryPromise;
 
 if (fs.existsSync('./' + databasePath)) {
+    db = new sqlite.Database(databasePath);
     console.log('WARNING: Database already exists, overwriting the fucker.');
     queryPromise = query('DELETE FROM sDay; DELETE FROM sEvent;');
 } else {
+    db = new sqlite.Database(databasePath);
     console.log('Creating tables from scratch');
     queryPromise = query(daysCreate)
         .then(query(eventsCreate));
