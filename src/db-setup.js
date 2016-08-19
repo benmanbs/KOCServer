@@ -21,7 +21,6 @@ var query = function(query) {
     return new Promise(function(resolve, reject) {
         db.run(query, function(err) {
             if (err) {
-                console.log('Something went wrong executing query: ' + query + ".\n Error: " + err);
                 reject();
             } else {
                 resolve();
