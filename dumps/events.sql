@@ -1,4 +1,3 @@
--- Day 1
 INSERT INTO `sEvent` (`title`, `hasMap`, `mapURL`, `dayNum`, `eventID`, `time`, `details`) VALUES
 ('Charter Arrival in Dallas', 0, '', 1, 1000, '12:45 PM', 'Welcome to Texas!'),
 ('Check-In Upon Arrival', 0, '', 1, 1010, '2:00 PM', 'FYI: Girls Tea Rooms are located in Sunnyside and Washington Irving Ballrooms. Boys Tea Rooms are in Trinity Ballrooms 1, 2 & 3'),
@@ -6,11 +5,10 @@ INSERT INTO `sEvent` (`title`, `hasMap`, `mapURL`, `dayNum`, `eventID`, `time`, 
 ('Dinner', 0, '', 1, 1030, '6:00 PM', '(Located in Trinity Ballrooms 4, 5, 6, 7 & 8)'),
 ('Surprise Night Activities', 0, '', 1, 1040, '6:45 PM', 'Make sure to be there for important announcements and tons of fun!'),
 ('Maariv', 0, '', 1, 1050, '8:30 PM', '(In the Oak Ballroom)'),
-('Bedtime', 0, '', 1, 1060, '9:00 PM', 'Get some rest, we have a big day tomorrow! :)');
+('Bedtime', 0, '', 1, 1060, '9:00 PM', 'Get some rest, we have a big day tomorrow! :)'),
 
 
 -- Day 2
-INSERT INTO `sEvent` (`title`, `hasMap`, `mapURL`, `dayNum`, `eventID`, `time`, `details`) VALUES
 ('Wake up, sleepyheads!', 0, '', 2, 2000, '7:30 AM', 'Everybody make sure to wish Dr. D and Howie a good morning'),
 ('Shachris in Hotel Shul', 0, '', 2, 2010, '8:00 AM', '(Located in the Oak Ballroom)'),
 ('Breakfast', 0, '', 2, 2020, '8:30 AM', '(Located in Trinity Ballrooms 4, 5, 6, 7 & 8)'),
@@ -26,11 +24,10 @@ INSERT INTO `sEvent` (`title`, `hasMap`, `mapURL`, `dayNum`, `eventID`, `time`, 
 ('Mincha', 0, '', 2, 2120, '7:00 PM', '(Located in the Oak Ballroom)'),
 ('Candle Lighting', 0, '', 2, 2130, '7:49 PM', 'Shkia is at 8:07PM'),
 ('PM Dinner', 0, '', 2, 2140, '8:00 PM', '(Located in the Main Ballroom, aka Trinity Ballrooms 4, 5, 6, 7 & 8)'),
-('Activity in the Shul', 0, '', 2, 2150, '9:30 PM', 'Please feel free to visit our delicious tea rooms for delicious tea (and dozens of other goodies)!');
+('Activity in the Shul', 0, '', 2, 2150, '9:30 PM', 'Please feel free to visit our delicious tea rooms for delicious tea (and dozens of other goodies)!'),
 
 
 -- Day 3
-INSERT INTO `sEvent` (`title`, `hasMap`, `mapURL`, `dayNum`, `eventID`, `time`, `details`) VALUES
 ('Daf Yomi', 0, '', 3, 3000, '8:20 AM', 'With Rabbi Elchonon Shoff'),
 ('Short Shiur', 0, '', 3, 3010, '8:50 AM', 'With Rabbi Elchonon Shoff'),
 ('Shacharis', 0, '', 3, 3020, '9:00 AM', ''),
@@ -44,45 +41,4 @@ INSERT INTO `sEvent` (`title`, `hasMap`, `mapURL`, `dayNum`, `eventID`, `time`, 
 ('Maariv', 0, '', 3, 3100, '8:40 PM', ''),
 ('Shabbos ends', 0, '', 3, 3110, '8:46 PM', 'Havdala outside the Ballroom'),
 ('Melava Malka', 0, '', 3, 3120, '9:30 PM', 'Bring your dancing shoes and get ready to enjoy the DJ Party!'),
-('Bedtime... Go to sleep!', 0, '', 3, 3110, '10:30 PM', '');
-
-
--- Day 4
-/*
-INSERT INTO `sEvent` (`title`, `hasMap`, `mapURL`, `dayNum`, `eventID`, `time`, `details`) VALUES
-('Charter Arrival in Dallas', 0, '', 1, 1000, '12:45 PM', 'Welcome to Texas!'),
-('Check-In Upon Arrival', 0, '', 1, 1010, '2:00 PM', ''),
-('Mincha in Hotel Shul', 0, '', 1, 1020, '5:40 PM', '(Located in the Oak Ballroom)'),
-('Skiing', 1, 'trail_map', 4, 4025, '10:20 AM', 'Until 3:30 PM. Please note: the Grand Summit Ballroom will be reserved specifically for KoC. Take breaks when needed during the day and chill out there - our activity team will entertain you with games and snacks!  It is very important to come inside if y'),
-*/
-
-
--- Day 5
-/*
-INSERT INTO `sEvent` (`title`, `hasMap`, `mapURL`, `dayNum`, `eventID`, `time`, `details`) VALUES
-('Charter Arrival in Dallas', 0, '', 1, 1000, '12:45 PM', 'Welcome to Texas!'),
-('Check-In Upon Arrival', 0, '', 1, 1010, '2:00 PM', ''),
-('Mincha in Hotel Shul', 0, '', 1, 1020, '5:40 PM', '(Located in the Oak Ballroom)'),
-('Skiing', 1, 'trail_map', 4, 4025, '10:20 AM', 'Until 3:30 PM. Please note: the Grand Summit Ballroom will be reserved specifically for KoC. Take breaks when needed during the day and chill out there - our activity team will entertain you with games and snacks!  It is very important to come inside if y'),
-*/
-
-
--- Day 6
-/*
-INSERT INTO `sEvent` (`title`, `hasMap`, `mapURL`, `dayNum`, `eventID`, `time`, `details`) VALUES
-('Charter Arrival in Dallas', 0, '', 1, 1000, '12:45 PM', 'Welcome to Texas!'),
-('Check-In Upon Arrival', 0, '', 1, 1010, '2:00 PM', ''),
-('Mincha in Hotel Shul', 0, '', 1, 1020, '5:40 PM', '(Located in the Oak Ballroom)'),
-('Skiing', 1, 'trail_map', 4, 4025, '10:20 AM', 'Until 3:30 PM. Please note: the Grand Summit Ballroom will be reserved specifically for KoC. Take breaks when needed during the day and chill out there - our activity team will entertain you with games and snacks!  It is very important to come inside if y'),
-*/
-
-
--- Day 7
-/*
-INSERT INTO `sEvent` (`title`, `hasMap`, `mapURL`, `dayNum`, `eventID`, `time`, `details`) VALUES
-('Charter Arrival in Dallas', 0, '', 1, 1000, '12:45 PM', 'Welcome to Texas!'),
-('Check-In Upon Arrival', 0, '', 1, 1010, '2:00 PM', ''),
-('Mincha in Hotel Shul', 0, '', 1, 1020, '5:40 PM', '(Located in the Oak Ballroom)'),
-('Skiing', 1, 'trail_map', 4, 4025, '10:20 AM', 'Until 3:30 PM. Please note: the Grand Summit Ballroom will be reserved specifically for KoC. Take breaks when needed during the day and chill out there - our activity team will entertain you with games and snacks!  It is very important to come inside if y'),
-*/
-
+('Bedtime... Go to sleep!', 0, '', 3, 3130, '10:30 PM', '');
