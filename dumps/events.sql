@@ -49,17 +49,19 @@ INSERT INTO `sEvent` (`title`, `hasMap`, `mapURL`, `dayNum`, `eventID`, `time`, 
 
 -- Day 4
 INSERT INTO `sEvent` (`title`, `hasMap`, `mapURL`, `dayNum`, `eventID`, `time`, `details`) VALUES
-('Coming Soon!', 0, '', 4, 4000, '', '');
---('Wake up', 0, '', 4, 4000, '9:00 AM', ''),
---('Shachris', 0, '', 4, 4010, '9:30 AM', 'SURPRISE ACTIVITY!'),
---('Lunch', 0, '', 4, 4020, '1:00 PM', ''),
---('Load buses', 0, '', 4, 4030, '1:30 PM', 'Depart to North Texas Fair & Rodeo. (2217 N Carroll Blvd, Denton, TX 76201)'),
---('Arrive at Fair & Rodeo', 0, '', 4, 4040, '2:15 PM', 'Enjoy the carnival, fair, rides, activities and more! Be on lookout for shows! Big events later!'),
---('Spanish Concert', 0, '', 4, 4050, '6:00 PM', 'And Tractor Pull.'),
---('The Big Rodeo Event', 0, '', 4, 4060, '7:30 PM', ''),
---('Load buses', 0, '', 4, 4070, '9:30 PM', ''),
---('Depart to Hotel', 0, '', 4, 4080, '10:15 PM', 'Maariv on buses'),
---('Arrive at Hotel', 0, '', 4, 4090, '11:00 PM', 'Go straight to sleep!'),
+('Daf Yomi in the Shul', 0, '', 4, 4000, '8:00 AM', ''),
+('Logistics Shacharis', 0, '', 4, 4010, '8:45 AM', ''),
+('Wake up', 0, '', 4, 4020, '9:00 AM', ''),
+('Shachris', 0, '', 4, 4030, '9:30 AM', 'SURPRISE ACTIVITY!'),
+('Breakfast', 0, '', 4, 4040, '10:00 AM', ''),
+('Lunch', 0, '', 4, 4050, '1:00 PM', ''),
+('Load buses', 0, '', 4, 4060, '1:30 PM', 'Depart to North Texas Fair & Rodeo. (2217 N Carroll Blvd, Denton, TX 76201)'),
+('Arrive at Fair & Rodeo', 0, '', 4, 4070, '2:15 PM', 'Enjoy the carnival, fair, rides, activities and more! Be on lookout for shows! Big events later!'),
+('Spanish Concert', 0, '', 4, 4080, '6:00 PM', 'And Tractor Pull.'),
+('The Big Rodeo Event', 0, '', 4, 4090, '7:30 PM', ''),
+('Load buses', 0, '', 4, 4100, '9:30 PM', ''),
+('Depart to Hotel', 0, '', 4, 4110, '10:15 PM', 'Maariv on buses'),
+('Arrive at Hotel', 0, '', 4, 4120, '11:00 PM', 'Go straight to sleep!');
 
 
 -- Day 5
