@@ -102,4 +102,4 @@ INSERT INTO `sEvent` (`title`, `hasMap`, `mapURL`, `dayNum`, `eventID`, `time`, 
 ('Dinner', 0, '', 7, 7110, '6:00 PM', ''),
 ('Closing Ceremonies!', 0, '', 7, 7120, '6:40 PM', ''),
 ('Maariv', 0, '', 7, 7130, '8:30 PM', ''),
-('Head to Bed!', 0, '', 7, 7140, '', 'Bring down your luggage if you havent already!');
+('Head to Bed!', 0, '', 7, 7140, '8:45 PM', 'Bring down your luggage if you havent already!');
