@@ -87,9 +87,9 @@ var uploadToFlickr = function(fileName, success, error, prefix) {
             // Here is some crazy logic. First strip the upload day and month from the file name.
             var uploadMonth = +(fileName.split('-')[0]);
             var uploadDay = +(fileName.split('-')[1]);
-            var IMAGE_EPOCH = 17;
+            var IMAGE_EPOCH = 2;
             var albumTitleEnd = uploadDay - IMAGE_EPOCH;
-            if (uploadMonth !== 7 || albumTitleEnd < 1 || albumTitleEnd > 9) {
+            if (uploadMonth !== 8 || albumTitleEnd < 1 || albumTitleEnd > 9) {
                 albumTitleEnd = "Party On!";
             } else {
                 albumTitleEnd = albumTitleEnd.toString();
